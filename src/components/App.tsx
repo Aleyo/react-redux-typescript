@@ -6,14 +6,9 @@ import { TodoPage } from './todo/TodoPage';
 import { AboutPage } from './about/AboutPage';
 import { NotFoundPage } from './notfound/NotFoundPage';
 
-interface AppProps {
-  children?: React.ReactNode;
-}
 
-export class App extends React.Component<AppProps, any> {
+export class App extends React.Component<any, any> {
   render() {
-
-    let {children} = this.props;
 
     return (
       <div>
