@@ -3,7 +3,7 @@ import * as React from 'react';
 interface TextInputInlineProps extends React.Props<TextInputInline> {
   name: string;
   value: string;
-  onChange: Function;
+  onChange: ()=>void;
   label?: string;
   placeholder?: string;
   error?: string;

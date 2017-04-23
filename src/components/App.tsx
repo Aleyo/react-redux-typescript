@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, IndexLink } from 'react-router';
+import { Link  } from 'react-router-dom';
 
 interface AppProps {
   children: React.ReactNode;
@@ -22,12 +22,12 @@ export class App extends React.Component<AppProps, any> {
                 <span className='icon-bar'></span>
                 <span className='icon-bar'></span>
               </button>
-              <Link className='navbar-brand' to='/'><i className='glyphicon glyphicon-home' /></Link>
+              <span className='navbar-brand'><Link to='/'><i className='glyphicon glyphicon-home' /></Link></span>
             </div>
 
             <div className='collapse navbar-collapse'>
               <ul className='nav navbar-nav'>
-                <li><IndexLink to='/todo'>Todos</IndexLink></li>
+                <li><Link to='/todo'>Todos</Link></li>
                 <li><Link to='/about'>About</Link></li>
               </ul>
             </div>

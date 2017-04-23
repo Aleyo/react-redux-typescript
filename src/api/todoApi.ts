@@ -1,4 +1,4 @@
-import * as axios from 'axios';
+import axios from 'axios';
 import { Todo } from '../models/Todo';
 
 const apiBaseUrl = 'http://localhost:8000/todos';

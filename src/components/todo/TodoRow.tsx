@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Todo } from '../../models/Todo';
 
 interface TodoProp extends Todo {
-  onClick: Function;
+  onClick: ()=>void;
 }
 
 export class TodoRow extends React.Component<TodoProp, any> {
