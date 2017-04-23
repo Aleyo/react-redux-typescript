@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { Link  } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import { HomePage } from './home/HomePage';
+import { TodoPage } from './todo/TodoPage';
+import { AboutPage } from './about/AboutPage';
+import { NotFoundPage } from './notfound/NotFoundPage';
 
 interface AppProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export class App extends React.Component<AppProps, any> {
@@ -36,7 +41,12 @@ export class App extends React.Component<AppProps, any> {
         </nav>
 
         <br/>
-        {children}
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route path='/todo' component={TodoPage}/>
+          <Route path='/about' component={AboutPage}/>
+          <Route path='*' component={NotFoundPage}/>
+        </Switch>
       </div>
     );
   }

@@ -6,10 +6,7 @@ import { Router, Route } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory'
 import todoApp from './reducers';
 import { App } from './components/App';
-import { HomePage } from './components/home/HomePage';
-import { TodoPage } from './components/todo/TodoPage';
-import { AboutPage } from './components/about/AboutPage';
-import { NotFoundPage } from './components/notfound/NotFoundPage';
+
 
 import { loadTodos, addTodoSuccess, toggleTodoSuccess } from './actions/';
 import * as io from 'socket.io-client';
@@ -35,13 +32,7 @@ store.dispatch(loadTodos());
 render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path='/' component={App as any}>
-        <Route component={HomePage}/>
-        <Route path='todo' component={TodoPage}/>
-        <Route path='about' component={AboutPage}/>
-        <Route path='*' component={NotFoundPage}/>
-      </Route>
-
+      <App/>
     </Router>
   </Provider>, document.getElementById('app')
 );
