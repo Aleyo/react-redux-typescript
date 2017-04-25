@@ -12,7 +12,7 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      { test: /\.tsx?$/, loader: 'tslint', include: path.join(__dirname, 'src') }
+
     ],
     loaders: [
       {
