@@ -22,9 +22,14 @@ const todos = (state: Todo[] = [], action: any) => {
     case LOAD_TODOS:
       return action.todos;
     case ADD_TODO:
+      const newTodo : Todo = {
+        id : getLastId(state) + 1,
+        completed : false,
+        text : action.text,
+      };
       return [
         ...state,
-        action.todo
+        newTodo
       ];
     case TOGGLE_TODO:
       return state.map(t => todo(t, action));
@@ -32,5 +37,16 @@ const todos = (state: Todo[] = [], action: any) => {
       return state;
   }
 };
+
+
+function getLastId(todos: Todo[]):number{
+  let id = 1;
+  todos.forEach(todo => {
+    if(todo.id > id){
+      id = todo.id;
+    }
+  });
+  return id;
+}
 
 export default todos;
