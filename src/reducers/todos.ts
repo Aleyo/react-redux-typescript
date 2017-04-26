@@ -1,5 +1,5 @@
 import { Todo } from '../models/Todo';
-import { LOAD_TODOS, ADD_TODO, TOGGLE_TODO } from '../constants/actionTypes';
+import { LOAD_TODOS, ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants/actionTypes';
 
 const todo = (state: Todo, action: any) => {
   switch (action.type) {
@@ -11,6 +11,7 @@ const todo = (state: Todo, action: any) => {
       return Object.assign({}, state, {
         completed: !state.completed
       });
+    
 
     default:
       return state;
@@ -33,6 +34,8 @@ const todos = (state: Todo[] = [], action: any) => {
       ];
     case TOGGLE_TODO:
       return state.map(t => todo(t, action));
+    case DELETE_TODO:
+      return state.filter(t => t.id != action.id);
     default:
       return state;
   }

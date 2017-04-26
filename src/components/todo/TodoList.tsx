@@ -5,13 +5,14 @@ import { Todo } from '../../models/Todo';
 interface TodoListProp {
   todos: Todo[];
   onTodoClick: Function;
+  onToDoDelete: Function;
 }
 
 export class TodoList extends React.Component<TodoListProp, any> {
 
   render() {
 
-    let { todos, onTodoClick } = this.props;
+    let { todos, onTodoClick, onToDoDelete } = this.props;
 
     return (
       <div>
@@ -20,6 +21,7 @@ export class TodoList extends React.Component<TodoListProp, any> {
             key={todo.id}
             {...todo}
             onClick={() => onTodoClick(todo.id) }
+            deleteToDo={() => onToDoDelete(todo.id) }
             />
         ) }
       </div>

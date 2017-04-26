@@ -22,6 +22,13 @@ export const toggleTodo = (id: number) => {
   return {
     type: actionTypes.TOGGLE_TODO,
     id: id
+  };
+};
+
+export const deleteTodo = (id: number) => {
+  return {
+    type: actionTypes.DELETE_TODO,
+    id: id
   }
 };
 
