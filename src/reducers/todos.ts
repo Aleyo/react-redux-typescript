@@ -1,5 +1,5 @@
 import { Todo } from '../models/Todo';
-import { LOAD_TODOS, ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants/actionTypes';
+import { LOAD_TODOS, ADD_TODO, TOGGLE_TODO, DELETE_TODO, SET_PRIORITY } from '../constants/actionTypes';
 
 const todo = (state: Todo, action: any) => {
   switch (action.type) {
@@ -12,6 +12,13 @@ const todo = (state: Todo, action: any) => {
         completed: !state.completed
       });
     
+    case SET_PRIORITY:
+     if (state.id !== action.id) {
+        return state;
+      }
+      return Object.assign({}, state, {
+        priority: action.priority
+      });     
 
     default:
       return state;
@@ -27,6 +34,7 @@ const todos = (state: Todo[] = [], action: any) => {
         id : getLastId(state) + 1,
         completed : false,
         text : action.text,
+        priority: 1
       };
       return [
         ...state,
@@ -34,8 +42,13 @@ const todos = (state: Todo[] = [], action: any) => {
       ];
     case TOGGLE_TODO:
       return state.map(t => todo(t, action));
+    
     case DELETE_TODO:
       return state.filter(t => t.id != action.id);
+
+    case SET_PRIORITY:
+      return state.map(t => todo(t, action));
+    
     default:
       return state;
   }

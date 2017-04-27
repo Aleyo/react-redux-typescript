@@ -32,3 +32,11 @@ export const deleteTodo = (id: number) => {
   }
 };
 
+export const setPriority = (id: number, priority: number) => {
+  return {
+    type: actionTypes.SET_PRIORITY,
+    id, //je to stejný jako id: id
+    priority
+  }
+};
+

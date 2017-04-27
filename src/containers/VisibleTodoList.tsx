@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../actions';
+import { toggleTodo, deleteTodo, setPriority } from '../actions';
 import { TodoList } from '../components/todo/TodoList';
 import { Todo } from '../models/Todo';
 
@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch: any) => {
     },
     onToDoDelete: (id: number) => {
       dispatch(deleteTodo(id));
+    },
+    onSetPriority: (id: number, priority: number) => {
+      dispatch(setPriority (id, priority));
     }
   };
 };
