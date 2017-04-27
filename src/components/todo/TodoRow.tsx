@@ -13,7 +13,6 @@ export class TodoRow extends React.Component<TodoProp, any> {
     let { onClick, completed, text, deleteToDo, setPriority, priority } = this.props;
     let checkIcon = completed ? 'glyphicon glyphicon-check' : 'glyphicon glyphicon-unchecked';
     const handlePriorityChange = (element: any): void =>{
-      console.log (element.target.value);
       const newPriority = element.target.value;
       setPriority(newPriority);
     };

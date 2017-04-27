@@ -19,7 +19,7 @@ const todo = (state: Todo, action: any) => {
       return Object.assign({}, state, {
         priority: action.priority
       });     
-
+      
     default:
       return state;
   }
