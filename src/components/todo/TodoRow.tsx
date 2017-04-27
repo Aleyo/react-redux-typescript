@@ -15,8 +15,9 @@ export class TodoRow extends React.Component<TodoProp, any> {
     return (
         <div>
         <span onClick={onClick} className="={completed ? 'todo completed' : 'todo'}">
-        <span className={checkIcon}></span>
-        <span className='todo-text'>{text} </span></span>
+          <span className={checkIcon}></span>
+          <span className='todo-text'>{text} </span>
+        </span>
         <button onClick={deleteToDo} className='todo-delete'>delete</button>
         </div>
     );
