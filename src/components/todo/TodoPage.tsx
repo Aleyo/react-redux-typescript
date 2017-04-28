@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { FilterGroup } from './FilterGroup';
+import { SortGroup } from './SortGroup';
 import AddTodo from '../../containers/AddTodo';
+
 import VisibleTodoList from '../../containers/VisibleTodoList';
 
 export const TodoPage = () => (
@@ -10,5 +12,6 @@ export const TodoPage = () => (
     <VisibleTodoList />
     <hr />
     <FilterGroup />
+    <SortGroup />
   </div>
 );

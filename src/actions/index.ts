@@ -40,3 +40,10 @@ export const setPriority = (id: number, priority: number) => {
   }
 };
 
+export const sortTodos = (order) => {
+  return {
+    type: actionTypes.SORT_TODOS,
+    order
+  }
+};
+
