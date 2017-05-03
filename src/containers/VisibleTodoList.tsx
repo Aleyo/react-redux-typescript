@@ -3,7 +3,7 @@ import { toggleTodo, deleteTodo, setPriority } from '../actions';
 import { TodoList } from '../components/todo/TodoList';
 import { Todo } from '../models/Todo';
 
-const getVisibleTodos = (todos: Todo[], filter: string) => {
+export const getVisibleTodos = (todos: Todo[], filter: string) => {
   switch (filter) {
     case 'SHOW_ALL':
       return todos;
