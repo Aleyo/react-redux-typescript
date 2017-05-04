@@ -5,6 +5,7 @@ import { App } from './components/App';
 import { HomePage } from './components/home/HomePage';
 import { TodoPage } from './components/todo/TodoPage';
 import { AboutPage } from './components/about/AboutPage';
+import { AlbumPage } from './components/album/AlbumPage';
 import { NotFoundPage } from './components/notfound/NotFoundPage';
 
 export default (
@@ -12,6 +13,7 @@ export default (
     <Route component={HomePage}/>
     <Route path='todo' component={TodoPage}/>
     <Route path='about' component={AboutPage}/>
+    <Route path='album' component={AlbumPage}/>
     <Route path='*' component={NotFoundPage}/>
   </Route>
 );

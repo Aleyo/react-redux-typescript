@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import { HomePage } from './home/HomePage';
 import { TodoPage } from './todo/TodoPage';
 import { AboutPage } from './about/AboutPage';
+import { AlbumPage } from './album/AlbumPage';
 import { NotFoundPage } from './notfound/NotFoundPage';
 
 
@@ -29,6 +30,7 @@ export class App extends React.Component<any, any> {
               <ul className='nav navbar-nav'>
                 <li><Link to='/todo'>Todos</Link></li>
                 <li><Link to='/about'>About</Link></li>
+                <li><Link to='/album'>Album</Link></li>
               </ul>
             </div>
 
@@ -40,6 +42,7 @@ export class App extends React.Component<any, any> {
           <Route exact path="/" component={HomePage}/>
           <Route path='/todo' component={TodoPage}/>
           <Route path='/about' component={AboutPage}/>
+          <Route path='/album' component={AlbumPage}/>
           <Route path='*' component={NotFoundPage}/>
         </Switch>
       </div>

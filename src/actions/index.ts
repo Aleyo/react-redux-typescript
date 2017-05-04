@@ -1,5 +1,6 @@
 import { Todo } from '../models/Todo';
 import * as actionTypes from '../constants/actionTypes';
+import axios from 'axios';
 
 
 export const setVisibilityFilter = (filter: string) => {
@@ -47,3 +48,31 @@ export const sortTodos = (order) => {
   }
 };
 
+const getPhotos = axios.get('https://jsonplaceholder.typicode.com/photos')
+  .then(function (response) {
+      return response.data
+  })
+  .catch(function (error) {
+      console.log(error);
+  });
+
+/*export const showPhotos = (id) => {
+  getPhotos.then(
+    return {
+      type: actionTypes.SHOW_PHOTOS,
+      id: id
+    }
+    )
+}
+*/
+
+
+
+export const showPhotos = (id) => (dispatch, getState) => {
+  return getPhotos.then(response => {
+    dispatch({
+        type: actionTypes.SHOW_PHOTOS,
+        data: response
+      })
+  })
+}

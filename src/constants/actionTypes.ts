@@ -5,3 +5,4 @@ export const DELETE_TODO = 'DELETE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const SET_PRIORITY = 'SET_PRIORITY';
 export const SORT_TODOS = 'SORT_TODOS';
+export const SHOW_PHOTOS = 'SHOW_PHOTOS';
