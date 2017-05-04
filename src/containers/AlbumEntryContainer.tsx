@@ -4,7 +4,7 @@ import AlbumEntry from '../components/album/AlbumEntry';
 
  const mapStateToProps = (state: any) => {
    return {
-      sendedPhoto: state.submitPhoto
+      photoResult : state.uploadedPhotos.uploadedPhoto
    };
  };
 

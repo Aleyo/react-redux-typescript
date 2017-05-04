@@ -3,7 +3,7 @@ import { sendedPhotoUrl } from '../../models/Photos';
 
 interface AlbumEntryProps extends sendedPhotoUrl {
     sendPhoto : (url) => void,
-    response? : any,
+    photoResult? : any,
     sendedPhotoUrl : string
 }
 
@@ -33,8 +33,10 @@ class AlbumEntry extends React.Component<AlbumEntryProps, any> {
       <div>
           <input type="text" name="imageUrlEntry" value={this.state.inputVal} onChange={onInputChange} />
           <button type="submit" onClick={onSubmitClick} name="imageUrlSubmitButton">Odešli</button>
-          <div>{this.props.response}</div>
-          <div>{this.state.albumEntryReducer}</div>
+          {/*<div>{this.props.response}</div>*/}
+          <div>{
+              JSON.stringify(this.props.photoResult)
+              }</div>
       </div>
     );
   }

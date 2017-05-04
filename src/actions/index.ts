@@ -81,21 +81,14 @@ export const showPhotos = (id) => (dispatch, getState) => {
   })
 }
 
-const postUrl = (url) => {
-  return axios.post('https://jsonplaceholder.typicode.com/posts',
+export const submitPhoto = (uploadedPhoto) => (dispatch, getState) => {
+   return axios.post('https://jsonplaceholder.typicode.com/posts',
     {
-      url: url
+      uploadedPhoto: uploadedPhoto
     })
     .then(function (response) {
       return response.data
-    })
-  .catch(function (error) {
-      console.log(error);
-  });
-}
-
-export const submitPhoto = (url) => (dispatch, getState) => {
-   return postUrl(url).then(function (response) {
+    }).then(function (response) {
       dispatch({
         type: actionTypes.SET_POST_RESULT,
         data: response

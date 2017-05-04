@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   visibilityFilter,
   sortOrdering,
   showPhotos,
-  albumEntryReducer
+  uploadedPhotos : albumEntryReducer
 });
 
 export default rootReducer;
