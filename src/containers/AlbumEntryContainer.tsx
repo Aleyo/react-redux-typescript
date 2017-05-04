@@ -1,27 +1,24 @@
 import { connect } from 'react-redux';
 import { showPhotos, submitPhoto} from '../actions';
-import { AlbumList } from '../components/album/AlbumList';
+import AlbumEntry from '../components/album/AlbumEntry';
 
  const mapStateToProps = (state: any) => {
    return {
-     photos: state.showPhotos.data
+      sendedPhoto: state.submitPhoto
    };
  };
 
 const mapDispatchToProps = (dispatch: any, ownProps: any) => {
   return {
-    onClick: () => {
-      dispatch(showPhotos(ownProps.id));
-    },
     sendPhoto: (url) => {
       dispatch(submitPhoto(url))
     }
   };
 };
 
-const Album = connect(
+const AlbumEntryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AlbumList as any);
+)(AlbumEntry as any);
 
-export default Album;
+export default AlbumEntryContainer;

@@ -48,13 +48,17 @@ export const sortTodos = (order) => {
   }
 };
 
-const getPhotos = axios.get('https://jsonplaceholder.typicode.com/photos')
+const getPhotos = () => {
+   return axios.get('https://jsonplaceholder.typicode.com/photos')
   .then(function (response) {
       return response.data
   })
   .catch(function (error) {
       console.log(error);
   });
+
+}
+ 
 
 /*export const showPhotos = (id) => {
   getPhotos.then(
@@ -69,9 +73,31 @@ const getPhotos = axios.get('https://jsonplaceholder.typicode.com/photos')
 
 
 export const showPhotos = (id) => (dispatch, getState) => {
-  return getPhotos.then(response => {
+  return getPhotos().then(response => {
     dispatch({
         type: actionTypes.SHOW_PHOTOS,
+        data: response
+      })
+  })
+}
+
+const postUrl = (url) => {
+  return axios.post('https://jsonplaceholder.typicode.com/posts',
+    {
+      url: url
+    })
+    .then(function (response) {
+      return response.data
+    })
+  .catch(function (error) {
+      console.log(error);
+  });
+}
+
+export const submitPhoto = (url) => (dispatch, getState) => {
+   return postUrl(url).then(function (response) {
+      dispatch({
+        type: actionTypes.SET_POST_RESULT,
         data: response
       })
   })

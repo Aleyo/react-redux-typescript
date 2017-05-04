@@ -5,3 +5,7 @@ export class Photos {
   url: string;
   thumbnailUrl: string;
 }
+
+export class sendedPhotoUrl {
+  url: string;
+}

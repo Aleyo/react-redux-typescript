@@ -11,4 +11,6 @@ const photos = axios.get('https://jsonplaceholder.typicode.com/photos')
     console.log(error);
 });
 
+
+
 export default photos;
