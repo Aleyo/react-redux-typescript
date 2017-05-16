@@ -28,6 +28,8 @@ class AlbumEntry extends React.Component<AlbumEntryProps, any> {
             }
         )
     }
+
+    
     
     return (
       <div>

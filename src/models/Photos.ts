@@ -9,3 +9,10 @@ export class Photos {
 export class sendedPhotoUrl {
   url: string;
 }
+
+
+
+export class sendedMessage {
+  url: string;
+}
+

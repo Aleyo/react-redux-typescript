@@ -6,4 +6,5 @@ export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const SET_PRIORITY = 'SET_PRIORITY';
 export const SORT_TODOS = 'SORT_TODOS';
 export const SHOW_PHOTOS = 'SHOW_PHOTOS';
+export const SHOW_MESSAGES = 'SHOW_MESSAGES';
 export const SET_POST_RESULT = 'SET_POST_RESULT';

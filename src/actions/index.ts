@@ -95,3 +95,42 @@ export const submitPhoto = (uploadedPhoto) => (dispatch, getState) => {
       })
   })
 }
+
+
+export const showMessages = (id) => (dispatch, getState) => {
+  return getMessages().then(response => {
+    dispatch({
+        type: actionTypes.SHOW_MESSAGES,
+        data: response
+      })
+  })
+}
+
+const getMessages = () => {
+   return axios.get('https://applifting-chat.herokuapp.com/api/v1/messages')
+  .then(function (response) {
+      return response.data
+  })
+  .catch(function (error) {
+      console.log(error);
+  });
+
+}
+
+
+export const sendMessage = (message, from) => (dispatch, getState) => {
+   return axios.post('https://applifting-chat.herokuapp.com/api/v1/messages',
+    {
+      message: message,
+      from: from
+    })
+    .then(function (response) {
+      return response.data
+    }).then(function (response) {
+      dispatch({
+        type: actionTypes.SET_POST_RESULT,
+        data: response
+      })
+  })
+}
+
