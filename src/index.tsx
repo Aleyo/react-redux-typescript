@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createAppStore } from './store';
 import { Router, Route } from 'react-router';
-import createBrowserHistory from 'history/createBrowserHistory'
+import {createBrowserHistory} from 'history';
 import todoApp from './reducers';
 import { App } from './components/App';
 
